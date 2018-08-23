@@ -1,21 +1,12 @@
 class Raindrops
   class << self   
     def convert(num)
-      string = ""
-      if num % 3 == 0
-        string = "#{string}Pling"
+      raindrops = { 3 => "Pling", 5 => "Plang", 7 => "Plong" }
+      conversion = ""
+      raindrops.each do |factor, translation|
+        conversion = "#{conversion}#{translation}" if num % factor == 0
       end
-      if num % 5 == 0
-        string = "#{string}Plang"
-      end
-      if num % 7 == 0
-        string = "#{string}Plong"
-      end
-      if string.empty? 
-        "#{num}"
-      else
-        string
-      end
+      conversion.empty? ? num.to_s : conversion
     end
   end
 end
