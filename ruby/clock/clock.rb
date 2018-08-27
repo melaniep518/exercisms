@@ -1,5 +1,3 @@
-require 'pry'
-
 class Clock
   attr_reader :time_in_minutes
 
